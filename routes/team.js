@@ -2,14 +2,14 @@ const express = require('express');
 const router = express.Router();
 const { check, validationResult } = require('express-validator');
 
-const Team = require('../models/Team');
+const Team = require('../models/team');
 
 // @route       GET api/team
 // @dsc         get the team info
 // @access      Public
 router.get('/team', async (req, res) => {
   try {
-    let team = await Team.find({}).select('-__v').select('-_id');
+    let team = await Team.find({}).select('-__v');
     return res.json({ team });
   } catch (err) {
     console.error(err.message);
