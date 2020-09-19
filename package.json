@@ -6,7 +6,8 @@
   "scripts": {
     "client": "cd client && npx yarn start",
     "server": "npx nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "cd client && yarn"
   },
   "repository": {
     "type": "git",
