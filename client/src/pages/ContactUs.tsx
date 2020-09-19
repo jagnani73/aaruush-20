@@ -1,6 +1,6 @@
 import React from "react";
 
-import Hero from "../components/ContactUs/Hero/Hero";
+import Hero from "../components/ContactUs/Hero";
 
 const ContactUs = () => {
   return (
