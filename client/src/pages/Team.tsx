@@ -1,6 +1,6 @@
 import React from "react";
 
-import Hero from "../components/Team/Team";
+import Hero from "../components/Team/Hero";
 
 const Team = () => {
   return (
