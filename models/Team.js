@@ -9,7 +9,7 @@ const TeamSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  description: {
+  designation: {
     type: String,
     required: true,
   },

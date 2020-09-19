@@ -25,7 +25,7 @@ router.post(
   [
     check('name', 'Please add a name').notEmpty(),
     check('img', 'Please add img url').notEmpty(),
-    check('description', 'Please add description').notEmpty(),
+    check('designation', 'Please add description').notEmpty(),
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -33,13 +33,13 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { name, img, description } = req.body;
+    const { name, img, designation } = req.body;
 
     try {
       let user = new Team({
         name,
         img,
-        description,
+        designation,
       });
 
       await user.save();
