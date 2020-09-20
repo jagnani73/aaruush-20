@@ -24,15 +24,16 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="flex flex-wrap w-full">
+    <div className="flex flex-wrap w-full bg-team">
       <div className="flex flex-wrap w-full lg:w-1/2">
-        <div className="w-10/12 mx-auto mt-10">
-          <h1 className="text-4xl text-justify lg:text-left">Meet the Team</h1>
-          <p className="w-full lg:w-1/2 my-10">
-            Lorem qui tempor nostrud adipisicing sint mollit aute laboris duis
-            eu culpa mollit sint. Eiusmod adipisicing qui incididunt cupidatat
-            officia pariatur ex dolor do eiusmod cillum. Tempor irure elit
-            occaecat magna nulla magna amet sunt ullamco.
+        <div className="w-10/12 mx-auto mt-10 text-white">
+          <h1 className="text-4xl text-justify lg:text-left">
+            Meet the <strong>Core Team</strong>
+          </h1>
+          <p className="w-full lg:w-1/2 mb-10 mt-5 italic">
+            "The strength of the team is each individual member.
+            <br />
+            The strength of each member is the team."
           </p>
         </div>
       </div>

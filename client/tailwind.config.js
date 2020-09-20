@@ -21,6 +21,8 @@ module.exports = {
         linkedin: "#0274B3",
         youtube: "#F70000",
         contactUs: "#0C0C0C",
+        team: "#333333",
+        teamCard: "#FFD7BF",
       },
     },
   },
