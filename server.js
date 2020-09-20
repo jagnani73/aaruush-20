@@ -13,11 +13,9 @@ const patronRoute = require("./routes/patrons");
 
 //Using helmet and CORS to secure the application
 app.use(helmet());
-app.use(
-  cors({
-    origin: "http://localhost:*",
-  })
-);
+if (process.env.NODE_ENV !== "production") {
+  app.use(cors());
+}
 
 if (process.env.NODE_ENV === "maintainance") {
   app.use("*", (req, res) => res.sendStatus(503));
