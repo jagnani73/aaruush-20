@@ -2,26 +2,26 @@ const express = require('express');
 const router = express.Router();
 const { check, validationResult } = require('express-validator');
 
-const Team = require('../models/team');
+const Patronages = require('../models/patrons');
 
-// @route       GET api/v1/team
-// @dsc         get the team info
+// @route       GET api/v1/patrons
+// @dsc         get the patrons info
 // @access      Public
-router.get('/team', async (req, res) => {
+router.get('/patrons', async (req, res) => {
   try {
-    let team = await Team.find({}).select('-__v');
-    return res.json({ team });
+    let patrons = await Patronages.find({}).select('-__v');
+    return res.json({ patrons });
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
   }
 });
 
-// @route       POST api/v1/team
-// @dsc         add new team member
+// @route       POST api/v1/patrons
+// @dsc         add new patron
 // @access      Public
 router.post(
-  '/team',
+  '/patrons',
   [
     check('name', 'Please add a name').notEmpty(),
     check('img', 'Please add img url').notEmpty(),
@@ -36,15 +36,15 @@ router.post(
     const { name, img, designation } = req.body;
 
     try {
-      let user = new Team({
+      let patron = new Patronages({
         name,
         img,
         designation,
       });
 
-      await user.save();
+      await patron.save();
       return res.json({
-        msg: 'user succesfully saved!',
+        msg: 'patron succesfully saved!',
       });
     } catch (err) {
       console.error(err.message);
