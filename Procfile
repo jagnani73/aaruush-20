@@ -1,1 +1,1 @@
-web: npx yarn start
+web: yarn start

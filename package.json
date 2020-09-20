@@ -4,12 +4,12 @@
   "description": "Official Website of A'20",
   "main": "server.js",
   "scripts": {
-    "client": "cd client && npx yarn start",
+    "client": "cd client && yarn start",
     "server": "npx nodemon server.js",
     "start": "node server.js",
-    "install": "npx yarn install",
-    "postinstall": "cd client && npx yarn",
-    "heroku-postinstall": "cd client && npx yarn build"
+    "install": "yarn",
+    "postinstall": "cd client && yarn",
+    "heroku-postinstall": "cd client && yarn build"
   },
   "repository": {
     "type": "git",
