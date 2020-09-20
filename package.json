@@ -8,7 +8,7 @@
     "server": "npx nodemon server.js",
     "start": "node server.js",
     "postinstall": "cd client && yarn",
-    "heroku-postinstall": "cd client && yarn build"
+    "heroku-postinstall": "NPM_CONFIG_PRODUCTION=false cd client && yarn build"
   },
   "repository": {
     "type": "git",
