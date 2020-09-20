@@ -15,16 +15,16 @@ const Footer = () => {
   return (
     <div className="w-full bg-gray-900 py-10 text-white">
       <div className="flex flex-wrap w-10/12 mx-auto">
-        <div className="flex flex-wrap w-1/2 my-auto">
-          <h3 className="w-1/3 text-3xl">Reach Us</h3>
-          <div className="flex flex-wrap w-2/3">
+        <div className="flex flex-wrap w-full lg:w-1/2 my-auto">
+          <h3 className="w-full lg:w-1/3 text-3xl">Reach Us</h3>
+          <div className="flex flex-wrap w-full lg:w-2/3 my-10 lg:my-0">
             <a
               href="https://twitter.com/aaruushsrmist"
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-wrap w-8 md:w-10 h-8 md:h-10 mx-auto rounded-md"
             >
-              <FontAwesomeIcon icon={faTwitter} className="text-5xl m-auto" />
+              <FontAwesomeIcon icon={faTwitter} className="text-4xl m-auto" />
             </a>
             <a
               href="https://www.instagram.com/aaruush_srm"
@@ -32,7 +32,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="flex flex-wrap w-8 md:w-10 h-8 md:h-10 mx-auto rounded-md"
             >
-              <FontAwesomeIcon icon={faInstagram} className="text-5xl m-auto" />
+              <FontAwesomeIcon icon={faInstagram} className="text-4xl m-auto" />
             </a>
             <a
               href="https://www.instagram.com/aaruush_srm"
@@ -40,7 +40,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="flex flex-wrap w-8 md:w-10 h-8 md:h-10 mx-auto rounded-md"
             >
-              <FontAwesomeIcon icon={faFacebook} className="text-5xl m-auto" />
+              <FontAwesomeIcon icon={faFacebook} className="text-4xl m-auto" />
             </a>
             <a
               href="https://www.youtube.com/channel/UC6mwWpwkZchii-oyWz0v3dw"
@@ -48,7 +48,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="flex flex-wrap w-8 md:w-10 h-8 md:h-10 mx-auto rounded-md"
             >
-              <FontAwesomeIcon icon={faYoutube} className="text-5xl m-auto" />
+              <FontAwesomeIcon icon={faYoutube} className="text-4xl m-auto" />
             </a>
             <a
               href="https://www.linkedin.com/company/aaruush-srm-ist/mycompany/"
@@ -56,11 +56,11 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="flex flex-wrap w-8 md:w-10 h-8 md:h-10 mx-auto rounded-md"
             >
-              <FontAwesomeIcon icon={faLinkedinIn} className="text-5xl m-auto" />
+              <FontAwesomeIcon icon={faLinkedinIn} className="text-4xl m-auto" />
             </a>
           </div>
         </div>
-        <div className="w-1/2 my-auto">
+        <div className="w-full lg:w-1/2 lg:my-auto">
           <div className="w-full ml-auto">
             <img src={logo} alt="envision" className="ml-auto" />
           </div>
