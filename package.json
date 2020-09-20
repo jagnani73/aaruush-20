@@ -7,8 +7,9 @@
     "client": "cd client && npx yarn start",
     "server": "npx nodemon server.js",
     "start": "node server.js",
-    "postinstall": "cd client && yarn",
-    "heroku-postinstall": "cd client && yarn build"
+    "install": "npx yarn install",
+    "postinstall": "cd client && npx yarn",
+    "heroku-postinstall": "cd client && npx yarn build"
   },
   "repository": {
     "type": "git",
