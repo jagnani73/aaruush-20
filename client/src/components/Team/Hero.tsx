@@ -1,29 +1,27 @@
 import React, { useState, useEffect } from "react";
 
 import APIService from "../../services/axios";
-import teamMember from "../../assets/Team/teamMember.jpg";
 import Member from "./Member";
 
+interface MemberStateType {
+  img: string;
+  name: string;
+  designation: string;
+}
+
 const Hero = () => {
+  const [members, setMembers] = useState<MemberStateType[]>([]);
+
   useEffect(() => {
     APIService.get(`/team`)
       .then((res) => {
-        console.log(res.data);
+        setMembers(res.data.team);
       })
       .catch((err) => {
         console.log(err);
         console.log(err.response.data);
       });
   }, []);
-  
-  const Members: { name: string; designation: string; img: string }[] = [
-    { name: "Andy Richter", designation: "Conan's PA", img: teamMember },
-    { name: "Andy Richter", designation: "Conan's PA", img: teamMember },
-    { name: "Andy Richter", designation: "Conan's PA", img: teamMember },
-    { name: "Andy Richter", designation: "Conan's PA", img: teamMember },
-    { name: "Andy Richter", designation: "Conan's PA", img: teamMember },
-    { name: "Andy Richter", designation: "Conan's PA", img: teamMember },
-  ];
 
   return (
     <div className="flex flex-wrap w-full">
@@ -39,7 +37,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="flex flex-wrap w-full">
-        {Members.map((member, index) => (
+        {members.map((member, index) => (
           <div key={index} className="w-1/2 lg:w-1/6 mx-auto px-3 lg:px-6 mt-5">
             <Member
               name={member.name}
