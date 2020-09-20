@@ -10,7 +10,7 @@ import {
 
 const Hero = () => {
   return (
-    <div className="flex flex-wrap text-5xl w-screen h-screen bg-contactUsBG bg-center bg-no-repeat bg-cover">
+    <div className="flex flex-wrap text-5xl w-full h-screen bg-contactUsBG bg-center bg-no-repeat bg-cover">
       <div className="w-3/4 lg:w-1/2 m-auto text-white text-center">
         <div className="w-full lg:w-1/2 ml-auto my-auto bg-contactUs shadow-contactUs text-base font-bold p-10">
           <h1>Aaruush Room, opposite Placement Cell </h1>

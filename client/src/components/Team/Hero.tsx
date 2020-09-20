@@ -24,7 +24,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="flex flex-wrap w-full bg-team">
+    <div className="flex flex-wrap w-full bg-team pt-20">
       <div className="flex flex-wrap w-full lg:w-1/2">
         <div className="w-10/12 mx-auto mt-10 text-white">
           <h1 className="text-4xl text-justify lg:text-left">
