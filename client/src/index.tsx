@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import "./index.scss";
 import "./tailwind.scss";
+import Navbar from "./components/Shared/Navbar";
 import App from "./App";
 import Footer from "./components/Shared/Footer";
 import * as serviceWorker from "./serviceWorker";
@@ -11,6 +12,7 @@ import * as serviceWorker from "./serviceWorker";
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+      <Navbar />
       <App />
       <Footer />
     </BrowserRouter>
