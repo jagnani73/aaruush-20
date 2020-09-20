@@ -1,19 +1,19 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { check, validationResult } = require('express-validator');
+const { check, validationResult } = require("express-validator");
 
-const Patronages = require('../models/patrons');
+const Patronages = require("../models/patrons");
 
 // @route       GET api/v1/patrons
 // @dsc         get the patrons info
 // @access      Public
-router.get('/patrons', async (req, res) => {
+router.get("/patrons", async (req, res) => {
   try {
-    let patrons = await Patronages.find({}).select('-__v');
+    let patrons = await Patronages.find({}).select("-__v");
     return res.json({ patrons });
   } catch (err) {
     console.error(err.message);
-    res.status(500).send('Server Error');
+    res.status(500).send("Internal Server Error.");
   }
 });
 
@@ -21,16 +21,16 @@ router.get('/patrons', async (req, res) => {
 // @dsc         add new patron
 // @access      Public
 router.post(
-  '/patrons',
+  "/patrons",
   [
-    check('name', 'Please add a name').notEmpty(),
-    check('img', 'Please add img url').notEmpty(),
-    check('designation', 'Please add description').notEmpty(),
+    check("name", "Please add a name").notEmpty(),
+    check("img", "Please add img url").notEmpty(),
+    check("designation", "Please add description").notEmpty(),
   ],
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
+      return res.status(400).json({ success: false, errors: errors.array() });
     }
 
     const { name, img, designation } = req.body;
@@ -43,12 +43,13 @@ router.post(
       });
 
       await patron.save();
-      return res.json({
-        msg: 'patron succesfully saved!',
+      return res.status(201).json({
+        success: true,
+        message: "patron succesfully saved!",
       });
     } catch (err) {
       console.error(err.message);
-      res.status(500).send('Server Error');
+      res.status(500).send("Internal Server Error.");
     }
   }
 );
