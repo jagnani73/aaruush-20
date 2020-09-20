@@ -1,7 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faFacebookF,
   faFacebook,
   faTwitter,
   faInstagram,
@@ -56,7 +55,10 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="flex flex-wrap w-8 md:w-10 h-8 md:h-10 mx-auto rounded-md"
             >
-              <FontAwesomeIcon icon={faLinkedinIn} className="text-4xl m-auto" />
+              <FontAwesomeIcon
+                icon={faLinkedinIn}
+                className="text-4xl m-auto"
+              />
             </a>
           </div>
         </div>

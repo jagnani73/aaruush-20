@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
+import APIService from "../../services/axios";
 import teamMember from "../../assets/Team/teamMember.jpg";
 import Member from "./Member";
 
 const Hero = () => {
+  useEffect(() => {
+    APIService.get(`/team`)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+        console.log(err.response.data);
+      });
+  }, []);
+  
   const Members: { name: string; designation: string; img: string }[] = [
     { name: "Andy Richter", designation: "Conan's PA", img: teamMember },
     { name: "Andy Richter", designation: "Conan's PA", img: teamMember },
