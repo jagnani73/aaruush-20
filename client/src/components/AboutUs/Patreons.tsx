@@ -33,7 +33,7 @@ const Patreons = () => {
       <h3 className="text-3xl leading-8 mb-8">Our Patreons</h3>
       <div className="flex flex-wrap w-full mx-auto">
         {Patreons.map((patreon, index) => (
-          <div key={index} className="flex flex-wrap w-1/6 mx-auto">
+          <div key={index} className="flex flex-wrap w-8/12 mg:5/12 lg:w-1/6 mx-auto mb-10 lg:mb-0">
             <div className="w-full">
               <img
                 src={patreon.img}
@@ -42,8 +42,8 @@ const Patreons = () => {
                 className="rounded-t-lg"
               />
             </div>
-            <div className="bg-gray-900 text-white text-center rounded-b-lg">
-              <h6 className="my-3">{patreon.name}</h6>
+            <div className="w-full bg-gray-900 text-white text-center rounded-b-lg">
+              <h6 className="my-3 text-xs md:text-sm lg:text-base">{patreon.name}</h6>
               <p className="text-sm mx-3 mb-3 font-thin">{patreon.designation}</p>
             </div>
           </div>

@@ -3,7 +3,7 @@ import React from "react";
 const Idealogy = () => {
   return (
     <div className="flex flex-wrap w-10/12 mx-auto mt-10">
-      <div className="w-5/12 mr-auto">
+      <div className="w-full lg:w-5/12 mr-auto">
         <h4 className="text-xl">#Theme</h4>
         <h3 className="text-3xl leading-8 mb-8">Towards Infinity</h3>
         <div className="my-5">
@@ -20,7 +20,7 @@ const Idealogy = () => {
           expectations with tireless hard work and dedication.
         </p>
       </div>
-      <div className="w-5/12 ml-auto">
+      <div className="w-full lg:w-5/12 ml-auto mt-10 lg:mt-0">
         <h4 className="text-xl">#Motto</h4>
         <h3 className="text-3xl leading-8 mb-8">
           Rising in the spirit of innovation
