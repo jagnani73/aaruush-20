@@ -5,12 +5,14 @@ import { BrowserRouter } from "react-router-dom";
 import "./index.scss";
 import "./tailwind.scss";
 import App from "./App";
+import Footer from "./components/Shared/Footer";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <App />
+      <Footer />
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
