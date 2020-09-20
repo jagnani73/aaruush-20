@@ -8,6 +8,8 @@ module.exports = {
     extend: {
       backgroundImage: () => ({
         contactUsBG: "url('./assets/ContactUs/bg.png')",
+        aboutUsBG: "url('./assets/AboutUs/bg.svg')",
+        aboutUsAccBG: "url('./assets/AboutUs/accredationsBg.svg')",
       }),
       boxShadow: {
         contactUs: "0 0 30px 0 rgba(0, 0, 0, 0.75)",
