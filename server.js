@@ -6,6 +6,7 @@ const app = express();
 require('dotenv').config();
 
 const teamRoute = require('./routes/team');
+const sponsorRoute = require('./routes/sponser');
 
 if (process.env.NODE_ENV === 'maintainance') {
   app.use('*', (req, res) => res.sendStatus(503));
@@ -20,6 +21,7 @@ app.use(express.json({ extended: false }));
 
 // Define Routes
 app.use('/api/v1', teamRoute);
+app.use('/api/v1', sponsorRoute);
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
