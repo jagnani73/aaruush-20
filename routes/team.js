@@ -4,7 +4,7 @@ const { check, validationResult } = require('express-validator');
 
 const Team = require('../models/team');
 
-// @route       GET api/team
+// @route       GET api/v1/team
 // @dsc         get the team info
 // @access      Public
 router.get('/team', async (req, res) => {
@@ -17,7 +17,7 @@ router.get('/team', async (req, res) => {
   }
 });
 
-// @route       POST api/team
+// @route       POST api/v1/team
 // @dsc         add new team member
 // @access      Public
 router.post(

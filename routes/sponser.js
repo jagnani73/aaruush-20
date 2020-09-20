@@ -4,7 +4,7 @@ const { check, validationResult } = require('express-validator');
 
 const Sponsor = require('../models/sponsor');
 
-// @route       GET api/sponsor
+// @route       GET api/v1/sponsor
 // @dsc         get the sponsor info
 // @access      Public
 router.get('/sponsor', async (req, res) => {
@@ -17,7 +17,7 @@ router.get('/sponsor', async (req, res) => {
   }
 });
 
-// @route       POST api/sponsor
+// @route       POST api/v1/sponsor
 // @dsc         add new sponsor
 // @access      Public
 router.post(
