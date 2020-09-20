@@ -1,19 +1,19 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { check, validationResult } = require('express-validator');
+const { check, validationResult } = require("express-validator");
 
-const Team = require('../models/team');
+const Team = require("../models/team");
 
 // @route       GET api/v1/team
 // @dsc         get the team info
 // @access      Public
-router.get('/team', async (req, res) => {
+router.get("/team", async (req, res) => {
   try {
-    let team = await Team.find({}).select('-__v');
+    let team = await Team.find({}).select("-__v");
     return res.json({ team });
   } catch (err) {
     console.error(err.message);
-    res.status(500).send('Server Error');
+    res.status(500).send("Internal Server Error.");
   }
 });
 
@@ -21,16 +21,16 @@ router.get('/team', async (req, res) => {
 // @dsc         add new team member
 // @access      Public
 router.post(
-  '/team',
+  "/team",
   [
-    check('name', 'Please add a name').notEmpty(),
-    check('img', 'Please add img url').notEmpty(),
-    check('designation', 'Please add description').notEmpty(),
+    check("name", "Please add a name").notEmpty(),
+    check("img", "Please add img url").notEmpty(),
+    check("designation", "Please add description").notEmpty(),
   ],
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
+      return res.status(400).json({ success: false, errors: errors.array() });
     }
 
     const { name, img, designation } = req.body;
@@ -43,12 +43,13 @@ router.post(
       });
 
       await user.save();
-      return res.json({
-        msg: 'user succesfully saved!',
+      return res.status(201).json({
+        success: true,
+        message: "user succesfully saved!",
       });
     } catch (err) {
       console.error(err.message);
-      res.status(500).send('Server Error');
+      res.status(500).send("Internal Server Error.");
     }
   }
 );
