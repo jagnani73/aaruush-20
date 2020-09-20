@@ -4,10 +4,11 @@
   "description": "Official Website of A'20",
   "main": "server.js",
   "scripts": {
-    "client": "cd client && npx yarn start",
+    "client": "cd client && yarn start",
     "server": "npx nodemon server.js",
     "start": "node server.js",
-    "postinstall": "cd client && yarn"
+    "postinstall": "cd client && yarn",
+    "build": "cd client && yarn build"
   },
   "repository": {
     "type": "git",
@@ -28,5 +29,8 @@
     "express": "^4.17.1",
     "express-validator": "^6.6.1",
     "mongoose": "^5.10.6"
+  },
+  "engines": {
+    "yarn": "1.x"
   }
 }
